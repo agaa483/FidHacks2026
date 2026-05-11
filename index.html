@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HerFinance</title>
+
+  <!-- Fonts from Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+
+  <!-- Our styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Decorative background blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Her<em>Finance</em></div>
+    <div class="nav-right">
+      <a href="#" class="nav-link">About</a>
+      <a href="#" class="nav-link">Community</a>
+      <a href="#" class="nav-link">Sign in</a>
+    </div>
+  </nav>
+
+
+  <!-- ==============================
+       PAGE 1 - Landing
+  ============================== -->
+  <div class="page" id="page-landing">
+
+    <!-- Hero headline with typewriter -->
+    <div style="text-align: center;">
+      <h1 class="headline">
+        Your money.<br>Your rules. <em>Finally.</em>
+      </h1>
+      <div class="typewriter-row">
+        <span>She deserves to understand her</span>
+        <span class="tw-word" id="tw">credit score<span class="cursor"></span></span>
+      </div>
+    </div>
+
+    <!-- Short story about why this exists -->
+    <div class="backstory">
+      <span class="backstory-tag">Our story</span>
+      <p>
+        In many immigrant households, financial knowledge is passed down selectively or not at all.
+        She watched her family work harder than anyone, and still had no one to explain what a
+        credit score was, what APR meant, or whether that job offer was actually good.
+      </p>
+      <p>
+        She figured it out <strong>alone</strong>. HerFinance exists so she never has to again.
+      </p>
+    </div>
+
+    <button class="btn-primary" onclick="goTo('page-explain')">
+      Get started
+      <span class="btn-icon">-></span>
+    </button>
+
+    <p style="font-size: 0.76rem; color: var(--text-light); font-weight: 300; margin-top: 0.5rem;">
+      Free. Takes about 2 minutes.
+    </p>
+
+  </div>
+
+
+  <!-- ==============================
+       PAGE 2 - Explanation
+  ============================== -->
+  <div class="page" id="page-explain">
+    <div class="explain-inner">
+
+      <span class="section-tag">How it works</span>
+      <h2 class="section-title">
+        We will build your<br><em>financial profile</em> first
+      </h2>
+      <p class="section-sub">
+        Answer a few quick questions so HerFinance can give you guidance that
+        actually fits your life, not a generic checklist.
+      </p>
+
+      <!-- Preview of the 4 features -->
+      <div class="explain-grid">
+
+        <div class="explain-card">
+          <div class="e-icon">[+]</div>
+          <div class="e-title">Credit Finder</div>
+          <div class="e-body">The right card for your actual situation. Plain English, no traps.</div>
+        </div>
+
+        <div class="explain-card">
+          <div class="e-icon">[o]</div>
+          <div class="e-title">Credit Simulator</div>
+          <div class="e-body">See your score grow based on real decisions you make today.</div>
+        </div>
+
+        <div class="explain-card">
+          <div class="e-icon">[*]</div>
+          <div class="e-title">HerGuide</div>
+          <div class="e-body">Credit questions answered without jargon. Share answers with your family.</div>
+        </div>
+
+        <div class="explain-card">
+          <div class="e-icon">[v]</div>
+          <div class="e-title">Consultations</div>
+          <div class="e-body">15 minute video call with a peer mentor who has been where you are.</div>
+        </div>
+
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <button class="btn-ghost" onclick="goTo('page-landing')">Back</button>
+        <button class="btn-primary" onclick="startQuiz()">
+          Build my profile
+          <span class="btn-icon">-></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==============================
+       PAGE 3 - Quiz
+  ============================== -->
+  <div class="page" id="page-quiz">
+    <div class="quiz-inner">
+
+      <!-- Progress bar -->
+      <div class="progress-wrap">
+        <div class="progress-top">
+          <span id="q-label">Question 1 of 10</span>
+          <span id="q-pct">10%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="prog" style="width: 10%;"></div>
+        </div>
+      </div>
+
+      <!-- Question content goes here, filled in by JS -->
+      <div id="quiz-body"></div>
+
+      <!-- Back and continue buttons -->
+      <div class="quiz-nav">
+        <button class="btn-ghost" id="btn-back" onclick="prevQ()">Back</button>
+        <button class="btn-primary" id="btn-next" onclick="nextQ()">
+          Continue <span class="btn-icon">-></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==============================
+       PAGE 4 - Dashboard
+  ============================== -->
+  <div class="page" id="page-dash">
+    <div class="dash-inner">
+
+      <!-- Personalized greeting using the name from the quiz -->
+      <div class="dash-header">
+        <h2 class="dash-greeting">
+          Welcome, <em id="dash-name">her</em>
+        </h2>
+        <p class="dash-sub">Your personalized financial home, built around your life.</p>
+
+        <!-- Profile pills filled in by JS from quiz answers -->
+        <div class="dash-profile" id="dash-pills"></div>
+      </div>
+
+      <!-- The 4 main feature cards -->
+      <div class="dash-grid">
+
+        <div class="card">
+          <div class="card-icon">[+]</div>
+          <span class="card-label">Find your card</span>
+          <h3 class="card-title">Credit Finder</h3>
+          <p class="card-body">
+            The right credit card for your actual life. Plain English, no traps, no sponsored results.
+          </p>
+          <div class="card-arrow">-></div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">[o]</div>
+          <span class="card-label">See your future</span>
+          <h3 class="card-title">Credit Simulator</h3>
+          <p class="card-body">
+            Watch your score grow based on real decisions you make today. Abstract becomes visible.
+          </p>
+          <div class="card-arrow">-></div>
+        </div>
+
+        <div class="card dark">
+          <div class="card-icon">[*]</div>
+          <span class="card-label">Ask anything</span>
+          <h3 class="card-title">HerGuide</h3>
+          <p class="card-body">
+            Credit questions answered without jargon. One tap to explain anything to your family.
+          </p>
+          <div class="card-arrow">-></div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">[v]</div>
+          <span class="card-label">Talk to someone</span>
+          <h3 class="card-title">Consultations</h3>
+          <p class="card-body">
+            15 minutes with a peer mentor who has been exactly where you are. Video call, no wait.
+          </p>
+          <div class="card-arrow">-></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Our script, loaded after the HTML -->
+  <script src="main.js"></script>
+
+</body>
+</html>

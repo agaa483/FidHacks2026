@@ -1,0 +1,615 @@
+/* --------------------------------
+   HerFinance - Main Stylesheet
+   Colors, layout, components
+-------------------------------- */
+
+/* Color and font variables */
+:root {
+  --rose: #D4688A;
+  --rose-light: #F2C4D4;
+  --rose-pale: #FDF0F4;
+  --blush: #FAE8EE;
+  --mauve: #5C3D4E;
+  --cream: #FDF8F5;
+  --text: #2D1A22;
+  --text-mid: #7A5568;
+  --text-light: #B08A9A;
+}
+
+/* Base reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* --------------------------------
+   Background blobs (decorative)
+-------------------------------- */
+.blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: 0;
+}
+.blob-1 { width: 520px; height: 520px; background: #F2C4D4; top: -120px; right: -100px; }
+.blob-2 { width: 420px; height: 420px; background: #FADDE8; bottom: -80px; left: -80px; }
+.blob-3 { width: 260px; height: 260px; background: #F9D0E0; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+/* --------------------------------
+   Navigation bar
+-------------------------------- */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2.5rem;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  color: var(--mauve);
+  z-index: 1;
+}
+
+.logo em {
+  color: var(--rose);
+  font-style: italic;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 1;
+}
+
+.nav-link {
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover { color: var(--rose); }
+
+/* --------------------------------
+   Page system - one page visible at a time
+-------------------------------- */
+.page {
+  min-height: 100vh;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 3rem;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.page.active { display: flex; }
+.page.visible { opacity: 1; }
+
+/* --------------------------------
+   Shared buttons
+-------------------------------- */
+.btn-primary {
+  background: var(--rose);
+  color: white;
+  border: none;
+  padding: 0.9rem 2.4rem;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(.34, 1.56, .64, 1), box-shadow 0.2s;
+  box-shadow: 0 6px 28px rgba(212, 104, 138, 0.38);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 44px rgba(212, 104, 138, 0.48);
+}
+
+.btn-primary:active { transform: scale(0.97); }
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  font-size: 0.78rem;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1.5px solid var(--rose-light);
+  color: var(--text-mid);
+  padding: 0.75rem 1.5rem;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+}
+
+.btn-ghost:hover {
+  border-color: var(--rose);
+  color: var(--rose);
+}
+
+/* --------------------------------
+   Page 1 - Landing
+-------------------------------- */
+#page-landing { gap: 2rem; }
+
+.headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 400;
+  color: var(--mauve);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.headline em {
+  color: var(--rose);
+  font-style: italic;
+}
+
+/* Typewriter line below headline */
+.typewriter-row {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  color: var(--text-light);
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.tw-word {
+  color: var(--rose);
+  font-style: italic;
+  min-width: 190px;
+  text-align: left;
+}
+
+/* Blinking cursor for typewriter */
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 0.8em;
+  background: var(--rose);
+  margin-left: 1px;
+  vertical-align: middle;
+  animation: blink 1s infinite;
+}
+
+/* Backstory card on landing page */
+.backstory {
+  max-width: 580px;
+  background: white;
+  border: 1px solid rgba(212, 104, 138, 0.15);
+  border-radius: 20px;
+  padding: 1.75rem 2rem;
+}
+
+.backstory-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.backstory p {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.78;
+  font-weight: 300;
+}
+
+.backstory p + p { margin-top: 0.65rem; }
+
+.backstory strong {
+  color: var(--mauve);
+  font-weight: 500;
+}
+
+/* --------------------------------
+   Page 2 - Explanation
+-------------------------------- */
+#page-explain { gap: 0; }
+
+.explain-inner {
+  max-width: 640px;
+  width: 100%;
+  text-align: center;
+}
+
+.section-tag {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 0.9rem;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-weight: 400;
+  color: var(--mauve);
+  line-height: 1.15;
+  margin-bottom: 0.9rem;
+}
+
+.section-title em {
+  color: var(--rose);
+  font-style: italic;
+}
+
+.section-sub {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+/* 2x2 grid previewing the 4 features */
+.explain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin-bottom: 2.25rem;
+  text-align: left;
+}
+
+.explain-card {
+  background: white;
+  border: 1px solid rgba(212, 104, 138, 0.15);
+  border-radius: 16px;
+  padding: 1.2rem;
+}
+
+.e-icon { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.e-title { font-size: 0.88rem; font-weight: 500; color: var(--mauve); margin-bottom: 0.3rem; }
+.e-body { font-size: 0.78rem; color: var(--text-light); line-height: 1.55; font-weight: 300; }
+
+/* --------------------------------
+   Page 3 - Quiz
+-------------------------------- */
+#page-quiz { gap: 0; }
+
+.quiz-inner {
+  max-width: 540px;
+  width: 100%;
+}
+
+/* Progress bar at top of quiz */
+.progress-wrap { margin-bottom: 2rem; }
+
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.progress-track {
+  height: 4px;
+  background: var(--blush);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--rose);
+  border-radius: 100px;
+  transition: width 0.4s ease;
+}
+
+/* Question text */
+.quiz-q {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  color: var(--mauve);
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.quiz-hint {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-weight: 300;
+  margin-bottom: 1.6rem;
+  line-height: 1.5;
+}
+
+/* Multiple choice options */
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.75rem;
+}
+
+.quiz-opt {
+  background: white;
+  border: 1.5px solid rgba(212, 104, 138, 0.2);
+  border-radius: 14px;
+  padding: 0.85rem 1.2rem;
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+  text-align: left;
+  font-weight: 400;
+}
+
+.quiz-opt:hover {
+  border-color: var(--rose);
+  color: var(--mauve);
+  background: var(--rose-pale);
+}
+
+/* Selected state for quiz option */
+.quiz-opt.sel {
+  border-color: var(--rose);
+  background: var(--rose-pale);
+  color: var(--mauve);
+  font-weight: 500;
+}
+
+/* Free text input for quiz */
+.quiz-input {
+  width: 100%;
+  background: white;
+  border: 1.5px solid rgba(212, 104, 138, 0.2);
+  border-radius: 14px;
+  padding: 0.85rem 1.2rem;
+  font-size: 0.88rem;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+  margin-bottom: 1.75rem;
+}
+
+.quiz-input:focus { border-color: var(--rose); }
+.quiz-input::placeholder { color: var(--text-light); }
+
+/* Back / Continue buttons at bottom of quiz */
+.quiz-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --------------------------------
+   Page 4 - Dashboard
+-------------------------------- */
+#page-dash {
+  gap: 0;
+  justify-content: flex-start;
+  padding-top: 7rem;
+}
+
+.dash-inner {
+  max-width: 820px;
+  width: 100%;
+}
+
+.dash-header { margin-bottom: 1.75rem; }
+
+.dash-greeting {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  color: var(--mauve);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.dash-greeting em {
+  color: var(--rose);
+  font-style: italic;
+}
+
+.dash-sub {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 0.4rem;
+  font-weight: 300;
+}
+
+/* Small pills showing user's profile answers */
+.dash-profile {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.9rem;
+}
+
+.profile-pill {
+  background: white;
+  border: 1px solid rgba(212, 104, 138, 0.2);
+  border-radius: 100px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.75rem;
+  color: var(--text-mid);
+}
+
+.profile-pill span {
+  color: var(--rose);
+  font-weight: 500;
+}
+
+/* 2x2 grid of feature cards */
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+}
+
+.card {
+  background: white;
+  border: 1px solid rgba(212, 104, 138, 0.15);
+  border-radius: 24px;
+  padding: 1.75rem;
+  cursor: pointer;
+  transition: transform 0.28s cubic-bezier(.34, 1.56, .64, 1), box-shadow 0.25s ease, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gradient on hover */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(242, 196, 212, 0.12) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s;
+  border-radius: 24px;
+}
+
+.card:hover {
+  transform: translateY(-7px) scale(1.015);
+  box-shadow: 0 24px 64px rgba(212, 104, 138, 0.16);
+  border-color: rgba(212, 104, 138, 0.38);
+}
+
+.card:hover::after { opacity: 1; }
+
+/* Dark variant card */
+.card.dark {
+  background: var(--mauve);
+  border-color: transparent;
+}
+
+.card.dark .card-label { color: #F2C4D4; opacity: 0.65; }
+.card.dark .card-title { color: white; }
+.card.dark .card-body { color: rgba(255, 255, 255, 0.52); }
+.card.dark .card-icon { background: rgba(255, 255, 255, 0.1); color: #F2C4D4; }
+.card.dark .card-arrow { background: rgba(255, 255, 255, 0.1); color: #F2C4D4; }
+.card.dark:hover .card-arrow { background: white; color: var(--mauve); }
+.card.dark:hover { box-shadow: 0 24px 64px rgba(92, 61, 78, 0.32); }
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--blush);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  color: var(--rose);
+  flex-shrink: 0;
+}
+
+.card-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rose);
+  opacity: 0.75;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--mauve);
+  line-height: 1.2;
+}
+
+.card-body {
+  font-size: 0.84rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+  font-weight: 300;
+  flex: 1;
+}
+
+.card-arrow {
+  align-self: flex-end;
+  width: 30px;
+  height: 30px;
+  background: var(--rose-pale);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rose);
+  font-size: 0.85rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.card:hover .card-arrow {
+  background: var(--rose);
+  color: white;
+  transform: translate(2px, -2px);
+}
+
+/* --------------------------------
+   Animations
+-------------------------------- */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* --------------------------------
+   Mobile adjustments
+-------------------------------- */
+@media (max-width: 600px) {
+  nav { padding: 1rem 1.25rem; }
+  .nav-link { display: none; }
+  .dash-grid, .explain-grid { grid-template-columns: 1fr; }
+  .page { padding: 6rem 1.25rem 2rem; }
+}
