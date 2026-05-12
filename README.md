@@ -1,27 +1,15 @@
-# HerFinance
+# SheNavigates
 
-Credit literacy app for first-gen immigrant college women. Static frontend + tiny Node/Express backend that proxies OpenAI.
+Credit literacy app for first-gen immigrant college women. HTML/CSS frontend + tiny Node/Express backend that uses OpenAI API.
 
-## Setup
+## Features
+Personalized chatbot that provides credit advice
+Document uploader to distill complex credit reports
+Links to Fidelity blog posts with relevant information
+English-Spanish translation support
 
-```bash
-npm install
-cp .env.example .env
-# edit .env and paste your OpenAI key
-npm start
-```
+## Challenges
+Many of us had never used the OpenAI API before, so integrating it into our website was a major learning experience. One challenge was figuring out how to provide the chatbot with new context about each user’s background and personal circumstances each time a user logged on.
 
-Open http://localhost:3000
-
-## Endpoints
-
-- `POST /api/chat` — `{ profile, history, message }` → `{ reply }`. Profile = quiz answers; history = prior chat turns. System prompt is built from the profile so every reply is personalized.
-- `POST /api/explain` — `{ profile, text }` → `{ reply }`. Simplifies the last bot answer for family.
-- `POST /api/scan` — multipart `pdf` + `profile` → structured JSON (APR, fees, flags, summary). Reads the PDF text and asks the model to extract terms.
-- `GET  /api/health` — sanity check.
-
-## Files
-
-- `server.js` — Express server
-- `index.html` / `style.css` / `main.js` — frontend (served statically)
-- `.env` — your OpenAI key (gitignored)
+## Future Improvements
+We hope to add support for more languages, expand the SheNavigates experience with webinars and additional resources, and introduce a feature that shares your profile with Fidelity so you can be matched with a recruiter who speaks the language you’re most comfortable using.
