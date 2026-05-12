@@ -1,5 +1,5 @@
 // =================================
-// HerFinance - Main JavaScript
+// She Navigates - Main JavaScript
 // Sidebar layout, 5 tabs
 // =================================
 
@@ -10,19 +10,19 @@ const landingText = {
   en: {
     headline:   'Build Credit.<br>Build Confidence.<br><em>Build Your Future.</em>',
     typePrefix: 'She deserves to understand her',
-    story1:     'In many immigrant households, financial knowledge is passed down selectively or not at all. She watched her family work harder than anyone and still had no one to explain what a credit score was, what APR meant, or whether that job offer was actually good.',
-    story2:     'She figured it out <strong>alone</strong>. HerFinance exists so she never has to again.',
+    story1:     'Credit shouldn\'t be confusing, especially for first-gen female students. We help you understand credit, build it safely, and make confident financial decisions.',
+    story2:     '<strong>All in your preferred language. All in one place.</strong>',
     langLabel:  'Choose your language',
-    btnLabel:   'Get started',
+    btnLabel:   'Start Your Journey',
     note:       'Free, takes about 2 minutes',
   },
   es: {
     headline:   'Construye Credito.<br>Construye Confianza.<br><em>Construye Tu Futuro.</em>',
     typePrefix: 'Ella merece entender su',
-    story1:     'En muchos hogares de inmigrantes, el conocimiento financiero se transmite de forma selectiva o simplemente no se transmite. Ella vio a su familia trabajar mas duro que nadie y aun asi no tuvo a nadie que le explicara que es un puntaje de credito.',
-    story2:     'Lo descubrio <strong>sola</strong>. HerFinance existe para que nunca mas tenga que hacerlo.',
+    story1:     'El credito no deberia ser confuso, especialmente para estudiantes de primera generacion. Te ayudamos a entender el credito, construirlo de forma segura y tomar decisiones financieras con confianza.',
+    story2:     '<strong>Todo en tu idioma preferido. Todo en un solo lugar.</strong>',
     langLabel:  'Elige tu idioma',
-    btnLabel:   'Comenzar',
+    btnLabel:   'Comienza Tu Viaje',
     note:       'Gratis, toma unos 2 minutos',
   }
 };

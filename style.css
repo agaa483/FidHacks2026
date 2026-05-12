@@ -51,8 +51,9 @@ html, body { height: 100%; font-family: 'DM Sans', sans-serif; background: var(-
 
 .landing-inner { max-width: 560px; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 2rem; }
 
-.landing-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--mauve); }
+.landing-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--mauve); display: flex; align-items: center; gap: 0.6rem; }
 .landing-logo em { color: var(--pink); font-style: italic; }
+.landing-logo-img { width: 48px; height: 48px; object-fit: contain; display: block; }
 
 .landing-headline { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 400; color: var(--mauve); line-height: 1.1; }
 .landing-headline em { color: var(--pink); font-style: italic; }
