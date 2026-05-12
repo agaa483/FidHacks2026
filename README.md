@@ -4,7 +4,7 @@ Credit literacy app for first-gen immigrant college women. HTML/CSS frontend + t
 
 ## Features
 <ul>
-<li></li>Personalized chatbot that provides credit advice</li>
+<li>Personalized chatbot that provides credit advice</li>
 <li>Document uploader to distill complex credit reports</li>
 <li>Links to Fidelity blog posts with relevant information</li>
 <li>English-Spanish translation support</li>
