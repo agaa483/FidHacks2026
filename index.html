@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HerFinance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+
+<!-- ============================================================
+     LANDING PAGE
+============================================================ -->
+<div id="landing">
+  <div class="landing-inner">
+
+    <div class="landing-logo">Her<em>Finance</em></div>
+
+    <div>
+      <h1 class="landing-headline" id="landing-headline">
+        Build Credit.<br>Build Confidence.<br><em>Build Your Future.</em>
+      </h1>
+      <div class="typewriter-row" style="margin-top:0.6rem">
+        <span id="landing-type-prefix">She deserves to understand her</span>
+        <span class="tw-word" id="tw">credit score<span class="cursor"></span></span>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <p id="landing-story-1">
+        In many immigrant households, financial knowledge is passed down selectively or not at all.
+        She watched her family work harder than anyone and still had no one to explain what a credit
+        score was, what APR meant, or whether that job offer was actually good.
+      </p>
+      <p id="landing-story-2" style="margin-top:0.6rem">
+        She figured it out <strong>alone</strong>. HerFinance exists so she never has to again.
+      </p>
+    </div>
+
+    <div class="lang-wrap">
+      <span class="lang-label" id="landing-lang-label">Choose your language</span>
+      <div class="lang-row">
+        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">English</button>
+        <button class="lang-btn" data-lang="es" onclick="setLanguage('es')">Espanol</button>
+      </div>
+    </div>
+
+    <button class="btn-start" id="landing-btn" onclick="enterApp()">Get started</button>
+
+    <p class="landing-note" id="landing-note">Free, takes about 2 minutes</p>
+
+  </div>
+</div>
+
+
+<!-- ============================================================
+     APP LAYOUT
+============================================================ -->
+<div id="app">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-top">
+      <span class="sidebar-logo">Her<em>Finance</em></span>
+      <div class="sidebar-tagline">Your credit journey</div>
+    </div>
+
+    <div class="sidebar-steps">
+
+      <button class="step-btn" data-tab="tab1" onclick="showTab('tab1')">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <span class="step-label">Start here</span>
+          <span class="step-title">I do not know anything about credit</span>
+        </div>
+      </button>
+
+      <button class="step-btn" data-tab="tab2" onclick="showTab('tab2')">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <span class="step-label">Get help</span>
+          <span class="step-title">I have questions about credit</span>
+        </div>
+      </button>
+
+      <button class="step-btn" data-tab="tab3" onclick="showTab('tab3')">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <span class="step-label">Take action</span>
+          <span class="step-title">I am ready to apply for a card</span>
+        </div>
+      </button>
+
+      <button class="step-btn" data-tab="tab4" onclick="showTab('tab4')">
+        <div class="step-num">4</div>
+        <div class="step-text">
+          <span class="step-label">Check an offer</span>
+          <span class="step-title">Is this credit card good?</span>
+        </div>
+      </button>
+
+      <button class="step-btn" data-tab="tab5" onclick="showTab('tab5')">
+        <div class="step-num">5</div>
+        <div class="step-text">
+          <span class="step-label">You made it</span>
+          <span class="step-title">I am all set</span>
+        </div>
+      </button>
+
+    </div>
+
+    <div class="sidebar-bottom">
+      <p class="sidebar-name" id="sidebar-name">Welcome</p>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="main-content">
+
+
+    <!-- ==================== TAB 1 — CREDIT BASICS ==================== -->
+    <div class="tab-panel" id="tab1">
+
+      <div class="tab-header">
+        <span class="tab-tag">Start here</span>
+        <h2 class="tab-title">I do not know anything<br>about <em>credit</em></h2>
+        <p class="tab-sub">That is completely normal. Here are the most helpful resources from Fidelity to get you started. Read through these first and then come back to step 2.</p>
+      </div>
+
+      <div class="resource-grid">
+
+        <a class="resource-card" href="https://www.fidelity.com/learning-center/personal-finance/credit-score" target="_blank">
+          <span class="res-tag">Fidelity</span>
+          <div class="res-title">What is a credit score and why does it matter?</div>
+          <p class="res-body">A clear breakdown of what your credit score is, how it is calculated, and why lenders care about it.</p>
+          <span class="res-link">Read on Fidelity.com &rarr;</span>
+        </a>
+
+        <a class="resource-card green-res" href="https://www.fidelity.com/learning-center/personal-finance/how-to-build-credit" target="_blank">
+          <span class="res-tag green">Fidelity</span>
+          <div class="res-title">How to build credit from scratch</div>
+          <p class="res-body">Step by step guidance on building a credit history when you are starting with nothing, including secured cards and becoming an authorized user.</p>
+          <span class="res-link green">Read on Fidelity.com &rarr;</span>
+        </a>
+
+        <a class="resource-card" href="https://www.fidelity.com/learning-center/personal-finance/credit-card-basics" target="_blank">
+          <span class="res-tag">Fidelity</span>
+          <div class="res-title">Credit card basics: APR, fees, and how interest works</div>
+          <p class="res-body">What all those terms on your credit card agreement actually mean, explained in plain language.</p>
+          <span class="res-link">Read on Fidelity.com &rarr;</span>
+        </a>
+
+        <a class="resource-card green-res" href="https://www.fidelity.com/learning-center/personal-finance/debt-management" target="_blank">
+          <span class="res-tag green">Fidelity</span>
+          <div class="res-title">Managing debt while building credit</div>
+          <p class="res-body">How to handle student loans, avoid predatory products, and build credit responsibly even when money is tight.</p>
+          <span class="res-link green">Read on Fidelity.com &rarr;</span>
+        </a>
+
+      </div>
+
+      <!-- What is credit — quick facts -->
+      <div class="content-card">
+        <p style="font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--pink);margin-bottom:0.85rem">Quick facts</p>
+        <div style="display:flex;flex-direction:column;gap:0.7rem">
+          <div style="display:flex;gap:0.75rem;align-items:flex-start">
+            <div style="width:6px;height:6px;border-radius:50%;background:var(--pink);flex-shrink:0;margin-top:6px"></div>
+            <p style="font-size:0.86rem;color:var(--text-mid);line-height:1.65;font-weight:300">Credit scores range from 300 to 850. Above 670 is considered good. Above 740 is great.</p>
+          </div>
+          <div style="display:flex;gap:0.75rem;align-items:flex-start">
+            <div style="width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;margin-top:6px"></div>
+            <p style="font-size:0.86rem;color:var(--text-mid);line-height:1.65;font-weight:300">Credit history does not transfer across countries. Even if your family had great credit back home, you start at zero in the US.</p>
+          </div>
+          <div style="display:flex;gap:0.75rem;align-items:flex-start">
+            <div style="width:6px;height:6px;border-radius:50%;background:var(--pink);flex-shrink:0;margin-top:6px"></div>
+            <p style="font-size:0.86rem;color:var(--text-mid);line-height:1.65;font-weight:300">The single most important thing you can do is pay your bill on time every month. That alone is 35% of your score.</p>
+          </div>
+          <div style="display:flex;gap:0.75rem;align-items:flex-start">
+            <div style="width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;margin-top:6px"></div>
+            <p style="font-size:0.86rem;color:var(--text-mid);line-height:1.65;font-weight:300">Starting credit at 18 instead of 25 makes a significant difference by the time you need an apartment or a car loan.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:1.5rem">
+        <button class="btn-primary" onclick="showTab('tab2')">I am ready for step 2 &rarr;</button>
+      </div>
+
+    </div>
+
+
+    <!-- ==================== TAB 2 — HERGUIDE ==================== -->
+    <div class="tab-panel" id="tab2">
+
+      <div class="tab-header">
+        <span class="tab-tag">Get help</span>
+        <h2 class="tab-title">I have questions<br>about <em>credit</em></h2>
+        <p class="tab-sub">Answer a few quick questions so HerGuide can give you personalized answers that actually fit your life.</p>
+      </div>
+
+      <!-- Quiz -->
+      <div id="quiz-wrap">
+        <div class="content-card">
+          <div class="progress-wrap">
+            <div class="progress-top">
+              <span id="q-label">Question 1 of 9</span>
+              <span id="q-pct">11%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="prog" style="width:11%"></div>
+            </div>
+          </div>
+
+          <div id="quiz-body"></div>
+
+          <div class="quiz-nav">
+            <button class="btn-ghost" id="btn-back" onclick="prevQ()">Back</button>
+            <button class="btn-primary" onclick="nextQ()">Continue &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- HerGuide — shown after quiz -->
+      <div class="guide-section" id="guide-section">
+
+        <!-- AI summary -->
+        <div class="ai-summary">
+          <span class="ai-summary-tag">Your profile</span>
+          <p id="ai-summary-text"></p>
+        </div>
+
+        <!-- Suggested questions -->
+        <p class="chips-label">Tap a question to get started, or type your own below</p>
+        <div class="chips" id="guide-chips"></div>
+
+        <!-- Chat -->
+        <div class="chat-window">
+          <div class="chat-messages" id="chat-messages"></div>
+          <div class="chat-bottom">
+            <input class="chat-input" id="chat-input" type="text" placeholder="Ask anything about credit..." onkeydown="chatKeydown(event)">
+            <button class="chat-send" onclick="sendMessage()">Send</button>
+          </div>
+        </div>
+
+        <!-- Explain to family -->
+        <button class="explain-btn" onclick="explainToFamily()" style="margin-bottom:1.5rem">
+          <div class="explain-title" id="explain-btn-title">Explain this to my family</div>
+          <span class="explain-sub" id="explain-btn-sub">Generates a simpler version they can read</span>
+        </button>
+
+        <button class="btn-primary" onclick="showTab('tab3');markDone('tab2')">I am ready to apply &rarr;</button>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==================== TAB 3 — APPLY ==================== -->
+    <div class="tab-panel" id="tab3">
+
+      <div class="tab-header">
+        <span class="tab-tag green">Take action</span>
+        <h2 class="tab-title">I am ready to<br><em class="green">apply for a card</em></h2>
+        <p class="tab-sub">Talk to a Fidelity advisor to find the right card for your situation, or browse options directly on the Fidelity website.</p>
+      </div>
+
+      <div id="apply-options-wrap">
+
+        <!-- Card images row -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem">
+
+          <div class="content-card" style="padding:0;overflow:hidden">
+            <img src="card-fidelity.png" alt="Fidelity Rewards Visa" style="width:100%;display:block;border-radius:16px 16px 0 0;object-fit:cover;height:160px">
+            <div style="padding:1.1rem">
+              <div style="font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--mauve);font-weight:400;margin-bottom:0.5rem">Fidelity Rewards Visa Signature</div>
+              <div style="font-size:0.75rem;color:var(--text-mid);line-height:1.6;font-weight:300">No annual fee &middot; 2% cashback into Fidelity &middot; Great for long-term goals &middot; APR: variable &middot; Fair credit or better</div>
+              <a href="https://www.fidelity.com/cash-management/visa-signature-card" target="_blank" class="btn-primary" style="margin-top:0.85rem;font-size:0.8rem;padding:0.6rem 1.25rem;text-decoration:none;display:inline-flex">Apply Now &rarr;</a>
+            </div>
+          </div>
+
+          <div class="content-card" style="padding:0;overflow:hidden;border-color:rgba(58,125,92,0.3)">
+            <img src="card-discover.png" alt="Discover It Student" style="width:100%;display:block;border-radius:16px 16px 0 0;object-fit:cover;height:160px">
+            <div style="padding:1.1rem">
+              <div style="font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--mauve);font-weight:400;margin-bottom:0.5rem">Discover It Student</div>
+              <div style="font-size:0.75rem;color:var(--text-mid);line-height:1.6;font-weight:300">No annual fee &middot; Cashback matched year one &middot; Designed for students &middot; APR: variable &middot; Student status required</div>
+              <a href="https://www.discover.com/credit-cards/student/" target="_blank" class="btn-primary" style="margin-top:0.85rem;font-size:0.8rem;padding:0.6rem 1.25rem;text-decoration:none;display:inline-flex">Apply Now &rarr;</a>
+            </div>
+          </div>
+
+          <div class="content-card" style="padding:0;overflow:hidden">
+            <img src="card-capitalone.png" alt="Capital One Quicksilver Student" style="width:100%;display:block;border-radius:16px 16px 0 0;object-fit:cover;height:160px">
+            <div style="padding:1.1rem">
+              <div style="font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--mauve);font-weight:400;margin-bottom:0.5rem">Capital One Quicksilver Student</div>
+              <div style="font-size:0.75rem;color:var(--text-mid);line-height:1.6;font-weight:300">No annual fee &middot; 1.5% cashback on everything &middot; Easy approval for beginners &middot; APR: variable &middot; Student status required</div>
+              <a href="https://www.capitalone.com/credit-cards/quicksilver-students/" target="_blank" class="btn-primary" style="margin-top:0.85rem;font-size:0.8rem;padding:0.6rem 1.25rem;text-decoration:none;display:inline-flex">Apply Now &rarr;</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Talk to advisor -->
+        <div class="apply-card featured" style="cursor:pointer;margin-bottom:0.75rem" onclick="startCall()">
+          <div class="apply-card-left">
+            <div class="apply-card-name">Talk to a Fidelity advisor first</div>
+            <div class="apply-card-detail">Not sure which card is right for you? A Fidelity advisor can help you decide in 15 minutes.</div>
+            <span class="apply-card-badge">Recommended</span>
+          </div>
+          <div class="apply-arrow">&#8599;</div>
+        </div>
+
+        <p class="apply-note">
+          Before applying anywhere, make sure you understand the APR and fees. Use step 4 to upload any offer and we will break it down for you.
+        </p>
+
+      </div>
+
+      <!-- Video call section (hidden until Start Call is clicked) -->
+      <div class="call-section" id="call-section">
+
+        <div style="margin-bottom:1.25rem">
+          <span class="tab-tag green">Live consultation</span>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--mauve);font-weight:400;margin-bottom:0.3rem">Connect with your <em style="color:var(--green);font-style:italic">Fidelity advisor</em></h3>
+        </div>
+
+        <!-- Waiting state - shown before connect -->
+        <div id="call-waiting" style="text-align:center;padding:2rem 0">
+          <div style="background:var(--white);border:1px solid rgba(212,104,138,0.15);border-radius:20px;padding:2rem;margin-bottom:1.5rem;box-shadow:var(--shadow-sm)">
+            <p style="font-size:0.88rem;color:var(--text-mid);line-height:1.7;font-weight:300;margin-bottom:1.25rem">
+              A Fidelity advisor is standing by to help you choose the right card based on your profile. Click connect when you are ready.
+            </p>
+            <button class="btn-green" onclick="connectCall()">
+              Connect to advisor &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- Connected state - shown after connect -->
+        <div id="call-connected" style="display:none">
+
+          <div class="call-status" style="margin-bottom:1.25rem">
+            <div class="call-status-dot connected"></div>
+            <span>Call in progress</span>
+          </div>
+
+          <div class="video-grid">
+            <div class="video-box">
+              <video id="student-video" autoplay muted playsinline style="width:100%;height:100%;object-fit:cover;display:block"></video>
+              <div class="video-label">You</div>
+            </div>
+            <div class="video-box">
+              <video id="advisor-video" src="video-call.mp4" playsinline style="width:100%;height:100%;object-fit:cover;display:block"></video>
+              <div class="video-label">Fidelity Advisor</div>
+            </div>
+          </div>
+
+          <div class="call-controls" style="margin-top:1.25rem">
+            <button class="btn-ghost" onclick="endCall()">Cancel</button>
+            <button class="btn-end-call" onclick="endCall()">End Call</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==================== TAB 4 — PDF SCANNER ==================== -->
+    <div class="tab-panel" id="tab4">
+
+      <div class="tab-header">
+        <span class="tab-tag">Check an offer</span>
+        <h2 class="tab-title">Is this credit<br>card <em>good?</em></h2>
+        <p class="tab-sub">Upload a credit card offer PDF and we will break down every important number in plain language and flag anything that could hurt you.</p>
+      </div>
+
+      <!-- Upload zone -->
+      <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-input').click()">
+        <div class="upload-icon">^</div>
+        <div class="upload-title">Drop your credit offer here</div>
+        <p class="upload-sub">or click to browse &middot; PDF files only</p>
+        <input type="file" id="file-input" class="upload-input" accept=".pdf" onchange="handleFileUpload(this)">
+      </div>
+
+      <!-- Loading -->
+      <div class="scanner-loading" id="scanner-loading">
+        <div class="spinner"></div>
+        <p>Reading your offer and checking for red flags...</p>
+      </div>
+
+      <!-- Results -->
+      <div class="scanner-results" id="scanner-results">
+        <div class="results-title">Here is what we found</div>
+        <div class="result-grid">
+          <div class="result-item"><div class="result-label">APR after intro</div><div class="result-val danger" id="r-apr"></div></div>
+          <div class="result-item"><div class="result-label">Intro APR</div><div class="result-val safe" id="r-intro"></div></div>
+          <div class="result-item"><div class="result-label">Annual fee</div><div class="result-val safe" id="r-fee"></div></div>
+          <div class="result-item"><div class="result-label">Late fee</div><div class="result-val danger" id="r-late"></div></div>
+          <div class="result-item"><div class="result-label">Penalty APR</div><div class="result-val danger" id="r-penalty"></div></div>
+        </div>
+        <div class="red-flags"><div class="red-flags-title">Watch out for these</div><div id="r-flags"></div></div>
+        <div class="scanner-summary" id="r-summary"></div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.25rem">
+          <button class="btn-ghost" onclick="resetScanner()">Scan another</button>
+          <button class="btn-primary" onclick="showTab('tab5');markDone('tab4')">I am done here &rarr;</button>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ==================== TAB 5 — CONGRATS ==================== -->
+    <div class="tab-panel" id="tab5">
+
+      <div class="tab-header">
+        <span class="tab-tag green">You made it</span>
+        <h2 class="tab-title">You are <em class="green">all set up</em></h2>
+      </div>
+
+      <div class="congrats-card">
+        <div class="congrats-title">Congratulations,<br><em>you took the first step</em></div>
+        <p class="congrats-sub">
+          Building credit takes time, but you have done the hardest part: starting.
+          Keep paying on time, keep your balance low, and check back in whenever you have questions.
+        </p>
+      </div>
+
+      <div class="next-steps-grid">
+
+        <div class="next-step-card green-card">
+          <span class="next-step-tag green">Next milestone</span>
+          <div class="next-step-title">Open a Roth IRA</div>
+          <p class="next-step-body">Once your credit is stable, the next move is investing. A Roth IRA lets your money grow tax-free. Starting at 20 instead of 30 makes a huge difference.</p>
+          <a class="next-step-link green" href="https://www.fidelity.com/retirement-ira/roth-ira" target="_blank">Learn more at Fidelity &rarr;</a>
+        </div>
+
+        <div class="next-step-card">
+          <span class="next-step-tag">Keep learning</span>
+          <div class="next-step-title">Fidelity learning center</div>
+          <p class="next-step-body">Free articles on credit, debt, budgeting, and investing. Written for people who are just starting out, not people who already know the terms.</p>
+          <a class="next-step-link" href="https://www.fidelity.com/learning-center/personal-finance" target="_blank">Go to learning center &rarr;</a>
+        </div>
+
+      </div>
+
+      <!-- Further questions -->
+      <div class="content-card">
+        <p style="font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:0.6rem">Still have questions?</p>
+        <p style="font-size:0.88rem;color:var(--text-mid);line-height:1.75;font-weight:300;margin-bottom:1rem">
+          Go back to step 2 at any time to ask HerGuide a question. You can also book a call with a Fidelity advisor from step 3 whenever you are ready for the next level of help.
+        </p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+          <button class="btn-ghost" onclick="showTab('tab2')">Back to HerGuide</button>
+          <button class="btn-green" onclick="showTab('tab3')">Book a Fidelity call</button>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+
+<script src="main.js"></script>
+</body>
+</html>
